@@ -65,6 +65,7 @@ pipeline {
       }
       steps {
         container('kubectl') {
+          sh "sed -i 's#'name: DT_CUSTOM_PROP': .#value: Build=${env.BUILD_NUMBER}' manifest/carts.yml"
           sh "sed -i 's#image: .*#image: ${env.TAG_DEV}#' manifest/carts.yml"
           sh "kubectl -n dev apply -f manifest/carts.yml"
         }
