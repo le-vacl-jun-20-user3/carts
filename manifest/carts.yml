@@ -21,7 +21,7 @@ spec:
         - name: DT_TAGS
           value: "product=sockshop Owner=Dallas"
         - name: DT_CUSTOM_PROP
-          value: "SERVICE_TYPE=BACKEND Owner=Dallas Build=${env.BUILD_NUMBER}"
+          value: "SERVICE_TYPE=BACKEND Owner=Dallas Build='${env.BUILD_NUMBER}'"
         resources:
           limits:
             cpu: 500m
